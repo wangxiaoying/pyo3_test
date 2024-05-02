@@ -5,7 +5,7 @@ use std::str::from_utf8_unchecked;
 
 #[derive(Clone, Debug)]
 #[repr(transparent)]
-pub struct PyString(Py<pyo3::types::PyString>);
+pub struct PyString(pub Py<pyo3::types::PyString>);
 
 // In order to put it into a numpy array
 unsafe impl Element for PyString {
